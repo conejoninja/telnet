@@ -306,7 +306,7 @@ func (c *Conn) ReadBytes(delim byte) ([]byte, error) {
 	for {
 		b, err := c.ReadByte()
 		if err != nil {
-			return nil, err
+			return line, err
 		}
 		line = append(line, b)
 		if b == delim {
